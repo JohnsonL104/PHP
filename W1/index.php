@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SE266 - Lucas Johnson</title>
+    <title>W1 - Lucas Johnson</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         html,body{
@@ -38,15 +38,15 @@
                 
                 <div class="dropdown-menu" aria-labelledby="assignmentsDD">
                     <a class = "dropdown-item" href = "/PHP/W1/index.php">W1</a>
-                    <a class = "dropdown-item" href = "/PHP//W2/index.php">W2</a>
-                    <a class = "dropdown-item" href = "/PHP//W3/index.php">W3</a>
-                    <a class = "dropdown-item" href = "/PHP//W4/index.php">W4</a>
-                    <a class = "dropdown-item" href = "/PHP//W5/index.php">W5</a>
-                    <a class = "dropdown-item" href = "/PHP//W6/index.php">W6</a>
-                    <a class = "dropdown-item" href = "/PHP//W7/index.php">W7</a>
-                    <a class = "dropdown-item" href = "/PHP//W8/index.php">W8</a>
-                    <a class = "dropdown-item" href = "/PHP//W9/index.php">W9</a>
-                    <a class = "dropdown-item" href = "/PHP//W10/index.php">W10</a>
+                    <a class = "dropdown-item" href = "/W2/index.php">W2</a>
+                    <a class = "dropdown-item" href = "/W3/index.php">W3</a>
+                    <a class = "dropdown-item" href = "/W4/index.php">W4</a>
+                    <a class = "dropdown-item" href = "/W5/index.php">W5</a>
+                    <a class = "dropdown-item" href = "/W6/index.php">W6</a>
+                    <a class = "dropdown-item" href = "/W7/index.php">W7</a>
+                    <a class = "dropdown-item" href = "/W8/index.php">W8</a>
+                    <a class = "dropdown-item" href = "/W9/index.php">W9</a>
+                    <a class = "dropdown-item" href = "/W10/index.php">W10</a>
                 </div>
             </li>
 
@@ -91,9 +91,13 @@
 
 
     <main>
-        <h1>PHP & MySQL - Lucas Johnson</h1>
-        <p>Explore this site to find my assignments to this course and more about me.</p>
-
+        <ul>
+            <li><a href = "/PHP/W1/C/index.php">C</a></li>
+            <li><a href = "/PHP/W1/D/index.php">D</a></li>
+            <li><a href = "/PHP/W1/E/index.php">E</a></li>
+            <li><a href = "/PHP/W1/F/index.php">F</a></li>
+            <li><a href = "/PHP/W1/G/index.php">G</a></li>
+        </ul>
     </main>
 
     
