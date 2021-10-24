@@ -81,7 +81,7 @@
 
 
     <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class = "navbar-brand" href = "~/index.php">SE266 - Lucas Johnson</a>
+        <a class = "navbar-brand" href = "/index.php">SE266 - Lucas Johnson</a>
         <ul class = "navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="assignmentsDD" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Assignments</a>
