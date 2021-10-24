@@ -95,22 +95,22 @@
 
 
     <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class = "navbar-brand" href = "/PHP/index.php">SE266 - Lucas Johnson</a>
+        <a class = "navbar-brand" href = "/index.php">SE266 - Lucas Johnson</a>
         <ul class = "navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="assignmentsDD" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Assignments</a>
                 
                 <div class="dropdown-menu" aria-labelledby="assignmentsDD">
-                <a class = "dropdown-item" href = "/PHP/W1/index.php">W1</a>
-                    <a class = "dropdown-item" href = "/PHP//W2/index.php">W2</a>
-                    <a class = "dropdown-item" href = "/PHP//W3/index.php">W3</a>
-                    <a class = "dropdown-item" href = "/PHP//W4/index.php">W4</a>
-                    <a class = "dropdown-item" href = "/PHP//W5/index.php">W5</a>
-                    <a class = "dropdown-item" href = "/PHP//W6/index.php">W6</a>
-                    <a class = "dropdown-item" href = "/PHP//W7/index.php">W7</a>
-                    <a class = "dropdown-item" href = "/PHP//W8/index.php">W8</a>
-                    <a class = "dropdown-item" href = "/PHP//W9/index.php">W9</a>
-                    <a class = "dropdown-item" href = "/PHP//W10/index.php">W10</a>
+                <a class = "dropdown-item" href = "/W1/index.php">W1</a>
+                    <a class = "dropdown-item" href = "/W2/index.php">W2</a>
+                    <a class = "dropdown-item" href = "/W3/index.php">W3</a>
+                    <a class = "dropdown-item" href = "/W4/index.php">W4</a>
+                    <a class = "dropdown-item" href = "/W5/index.php">W5</a>
+                    <a class = "dropdown-item" href = "/W6/index.php">W6</a>
+                    <a class = "dropdown-item" href = "/W7/index.php">W7</a>
+                    <a class = "dropdown-item" href = "/W8/index.php">W8</a>
+                    <a class = "dropdown-item" href = "/W9/index.php">W9</a>
+                    <a class = "dropdown-item" href = "/W10/index.php">W10</a>
                 </div>
             </li>
 
