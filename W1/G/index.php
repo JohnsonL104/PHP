@@ -25,3 +25,4 @@ for($i = 0; $i < 100; $i++){
 
 //Call view.php
 require "view.php";
+ 
