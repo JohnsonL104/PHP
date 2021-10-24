@@ -37,11 +37,11 @@
         const OVERDRAW_LIMIT = -200;
 
         public function withdrawal($amount) {
-            if($this->balance - $amount < $this->OVERDRAW_LIMIT){
-                $this->balance = $this->OVERDRAW_LIMIT;
+            if($this->balance - $amount < self::OVERDRAW_LIMIT){
+                $this->balance = self::OVERDRAW_LIMIT;
             }
             else{
-                $this->balance = $this->balance - $account;
+                $this->balance = $this->balance - $amount;
             }
         }
 
@@ -57,11 +57,11 @@
     class SavingsAccount extends Account {
 
         public function withdrawal($amount) {
-            if($this->balance - $ammount < 0){
+            if($this->balance - $amount < 0){
                 $this->balance = 0;
             }
             else{
-                $this->balance = $this->balance - $ammount;
+                $this->balance = $this->balance - $amount;
             }
         }
 
@@ -74,14 +74,14 @@
     }
 
     
-    $checking = new CheckingAccount ('C123', 1000, '12-20-2019');
-    $checking->withdrawal(200);
-    $checking->deposit(500);
+    // $checking = new CheckingAccount ('C123', 1000, '12-20-2019');
+    // $checking->withdrawal(200);
+    // $checking->deposit(500);
 
-    $savings = new SavingsAccount('S123', 5000, '03-20-2020');
+    // $savings = new SavingsAccount('S123', 5000, '03-20-2020');
     
-    echo $checking->getAccountDetails();
-    echo $savings->getAccountDetails();
-    echo $checking->getStartDate();
+    // echo $checking->getAccountDetails();
+    // echo $savings->getAccountDetails();
+    // echo $checking->getStartDate();
     
 ?>
