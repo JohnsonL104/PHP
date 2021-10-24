@@ -31,13 +31,13 @@
 
 
     <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class = "navbar-brand" href = "/PHP/index.php">SE266 - Lucas Johnson</a>
+        <a class = "navbar-brand" href = "~/index.php">SE266 - Lucas Johnson</a>
         <ul class = "navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="assignmentsDD" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Assignments</a>
                 
                 <div class="dropdown-menu" aria-labelledby="assignmentsDD">
-                    <a class = "dropdown-item" href = "/PHP/W1/index.php">W1</a>
+                    <a class = "dropdown-item" href = "/W1/index.php">W1</a>
                     <a class = "dropdown-item" href = "/W2/index.php">W2</a>
                     <a class = "dropdown-item" href = "/W3/index.php">W3</a>
                     <a class = "dropdown-item" href = "/W4/index.php">W4</a>
@@ -92,11 +92,11 @@
 
     <main>
         <ul>
-            <li><a href = "/PHP/W1/C/index.php">C</a></li>
-            <li><a href = "/PHP/W1/D/index.php">D</a></li>
-            <li><a href = "/PHP/W1/E/index.php">E</a></li>
-            <li><a href = "/PHP/W1/F/index.php">F</a></li>
-            <li><a href = "/PHP/W1/G/index.php">G</a></li>
+            <li><a href = "/W1/C/index.php">C</a></li>
+            <li><a href = "/W1/D/index.php">D</a></li>
+            <li><a href = "/W1/E/index.php">E</a></li>
+            <li><a href = "/W1/F/index.php">F</a></li>
+            <li><a href = "/W1/G/index.php">G</a></li>
         </ul>
     </main>
 
