@@ -3,7 +3,15 @@
     require(__DIR__ . '/models/Patients.php');
     
 
-    
+    if($_SERVER['REQUEST_METHOD']==='POST'){
+        if(addPatient($_POST)){
+            header("Location: index.php");
+            exit();
+        }
+        else{
+            echo 'ERROR INSERTING PATIENT';
+        }
+    }
 
 ?>
 
@@ -100,27 +108,27 @@
 
 
     <main>
-        <h1>Patients</h1>
-        <a href = "addPatient.php">Add a Patient</a>
-        <table class = "table">
-            <thead>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Married</th>
-                <th>Date Of Birth</th>
-            </thead>
-            <?php foreach(getTable() as $i){?>
-                <tr>
-                    <td><?php echo $i['id'];?></td>
-                    <td><?php echo $i['patientFirstName'];?></td>
-                    <td><?php echo $i['patientLastName'];?></td>
-                    <td><?php echo ($i['patientMarried'] == '0') ? "NO" : "YES" ?></td>
-                    <td><?php echo $i['patientBirthDate'];?></td>
-                </tr>
-            <?php }?>
-            
-        </table>
+        <h1>Add A Patient</h1>
+        <a href = "index.php">Back</a>
+        <form method = "post">
+            <p>First Name:</p>
+            <input type = "text" name="fName" required>
+            <p>Last Name:</p>
+            <input type = "text" name = "lName" required>
+            <p>Married:</p>
+            <div>
+                <input type = "radio" id = "yo" name = "married" value = "1">
+                <label for="yo">Yes</label>
+            </div>
+            <div>
+                <input type = "radio" id = "no" name = "married" value = "0" checked>
+                <label for="no">No</label>
+            </div>
+            <p>Date of Birth:</p>
+            <input type = "date" name = "birthday" max = "<?= date('Y-m-d');?>" required>
+            <br><br>
+            <input type = "submit" value = "Submit">
+        </form>
     </main>
 
     
