@@ -1,8 +1,7 @@
 <?php
     
     require(__DIR__ . '/models/Patients.php');
-    echo getTable();
-
+  
     
 
 ?>
