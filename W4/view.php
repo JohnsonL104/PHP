@@ -1,7 +1,7 @@
 <?php
     
     require(__DIR__ . '/models/Patients.php');
-    echo var_dump(getTable());
+    echo get_table();
 
     
 
