@@ -1,6 +1,6 @@
 <?php
   
-    include(__DIR__ . '\db.php');
+    include(__DIR__ . '/db.php');
     
     function getTable(){
         global $db;
@@ -30,6 +30,54 @@
         }
         else{
             return false;
+        }
+    }
+
+    function getPatient($postData){
+        global$db;
+        $stmt = $db->prepare("SELECT * FROM patients WHERE id = :id");
+        $binds = array(
+            ":id" => $postData['id']
+        );
+        
+        if($stmt->execute($binds) && $stmt->rowCount() > 0){
+            return($stmt->fetchAll(PDO::FETCH_ASSOC));
+        }
+        else{
+            return false;
+        }
+    }
+    function updatePatient($postData){
+        global $db;
+        $stmt = $db->prepare("UPDATE patients SET patientFirstName = :fName, patientLastName = :lName, patientMarried = :married, patientBirthDate = :bday WHERE id = :id");
+        $binds = array(
+            ":fName" => $postData['fName'],
+            ":lName" => $postData['lName'],
+            ":married" => $postData['married'],
+            ":bday" => $postData['birthday'],
+            ":id" => $postData['id']
+        );
+        if($stmt->execute($binds)){
+            return(true);
+        }
+        else{
+            return(false);
+        }
+    }
+
+    function deletePatient($postData){
+        global $db;
+        $stmt = $db->prepare("DELETE FROM patients WHERE id = :id");
+
+        $binds = array(
+            ":id" => $postData['id']
+        );
+
+        if($stmt->execute($binds)){
+            return(true);
+        }
+        else{
+            return(false);
         }
     }
 

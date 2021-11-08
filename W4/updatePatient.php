@@ -1,13 +1,20 @@
 <?php
     
     require(__DIR__ . '/models/Patients.php');
-    
+
     if($_SERVER['REQUEST_METHOD']==='POST'){
-        if(!deletePatient($_POST)){
-            echo "Error Deleting Patient";
+        if($_POST['submit'] == "Update"){
+            updatePatient($_POST);
         }
+        $patient = getPatient($_POST);
+            if($patient ===false){
+                echo "Patient could not be found";
+            }
     }
-    
+    else{
+        header("Location: index.php");
+        die();
+    }
 
 ?>
 
@@ -34,9 +41,10 @@
             background-color: #eeeeee;
             padding: 5%;
         }
-        .hidden{ 
+        .hidden{
             display: none;
         }
+
 
 
 
@@ -106,29 +114,30 @@
 
 
     <main>
-        <h1>Patients</h1>
-        <a href = "addPatient.php">Add a Patient</a>
-        <table class = "table">
-            <thead>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Married</th>
-                <th>Date Of Birth</th>
-            </thead>
-            <?php foreach(getTable() as $i){?>
-                <tr>
-                    <td><?php echo $i['id'];?></td>
-                    <td><?php echo $i['patientFirstName'];?></td>
-                    <td><?php echo $i['patientLastName'];?></td>
-                    <td><?php echo ($i['patientMarried'] == '0') ? "NO" : "YES" ?></td>
-                    <td><?php echo $i['patientBirthDate'];?></td>
-                    <td><a href = "#" class = "updateBtn">Update</a></td>
-                    <td><a href = "#" class = "deleteBtn">Delete</a></td>
-                </tr>
-            <?php }?>
-            
-        </table>
+        <h1>Update Patient</h1>
+        <a href = "index.php">Back</a>
+        <form method = "post">
+            <input class = "hidden" name = "id" value = "<?= $_POST['id']?>">
+            <p>First Name:</p>
+            <input type = "text" name="fName" value = "<?= $patient[0]['patientFirstName']?>" required>
+            <p>Last Name:</p>
+            <input type = "text" name = "lName" value = "<?= $patient[0]['patientLastName']?>" required>
+            <p>Married:</p>
+            <div>
+                <input type = "radio" id = "yo" name = "married" value = "1" <?= ($patient[0]['patientMarried'] == '1') ? 'checked': ''?>>
+                <label for="yo">Yes</label>
+            </div>
+            <div>
+                <input type = "radio" id = "no" name = "married" value = "0" <?= ($patient[0]['patientMarried'] == '0') ? 'checked': ''?>>
+                <label for="no">No</label>
+            </div>
+            <p>Date of Birth:</p>
+           
+            <input type = "date" name = "birthday" max = "<?= date('Y-m-d');?>" value = "<?= date('Y-m-d', strtotime($patient[0]['patientBirthDate']))?>" required>
+            <br><br>
+            <input type = "submit" value = "Update" name = "submit">
+
+        </form>
     </main>
 
     
@@ -152,42 +161,7 @@
         </div>
     </footer>
     
-    <form class = "hidden" method = "post" action = "updatePatient.php">
-        <input type = "text" id = "updateInput" name = "id">
-        <input type = "submit" id = "updateSubmit" name = "submit">
-    </form>
-    <form class = "hidden" method = "post">
-        <input type = "text" id = "deleteInput" name = "id">
-        <input type = "submit" id = "deleteSubmit" name = "submit">
-    </form>
 
-    <script>
-        updateInput = document.querySelector("#updateInput")
-        updateSubmit = document.querySelector("#updateSubmit")
-        deleteInput = document.querySelector("#deleteInput")
-        deleteSubmit = document.querySelector("#deleteSubmit")
-        
-        updateBtn = document.querySelectorAll(".updateBtn")
-        deleteBtn = document.querySelectorAll(".deleteBtn")
-        for(let i = 0; i < updateBtn.length; i++){
-            updateBtn[i].addEventListener("click", function(e){
-                e.preventDefault()
-                console.log(e.target.parentElement.parentElement.children[0].innerText)
-                updateInput.value = e.target.parentElement.parentElement.children[0].innerText
-                updateSubmit.click();
-            })
-        }
-        for(let i = 0; i < deleteBtn.length; i++){
-            deleteBtn[i].addEventListener("click", function(e){
-                console.log("click")
-                e.preventDefault()
-                deleteInput.value = e.target.parentElement.parentElement.children[0].innerText
-                deleteSubmit.click();
-            })
-        }
-
-
-    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
